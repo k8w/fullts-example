@@ -1,20 +1,17 @@
-import { TsrpcClient } from 'tsrpc-browser';
-import PtlDemo from '../shared/protocols/PtlDemo';
-import { ReqDemo } from '../shared/protocols/PtlDemo';
+import { FulltsApp } from 'fullts';
+import Layout from './views/Layout';
 
-let client = new TsrpcClient({
-    serverUrl: 'http://localhost:3000'
-});
+let app = new FulltsApp({
+    serverUrl: 'http://localhost:3001',
+    routes: [
+        { path: '/', component: () => import('./views/HomeView'), layout: () => import('./views/Layout') },     // layout将延迟加载
+        { path: '/sub', component: () => import('./views/SubView'), layout: () => import('./views/Layout') },   // layout将延迟加载
+        { path: '/sub/:id', component: () => import('./views/SubView'), layout: Layout },   // layout将同步加载
+        { path: '*', component: () => import('./views/Page404') }   // 404页面
+    ],
+    onRouteChange: e => {
+        console.log(e);
+    }
+})
 
-(async function () {
-    let res = await client.callApi(PtlDemo, {
-        a: 'aaaa',
-        b: [1, 2, 3],
-        c: 'f',
-        d: {
-            d1: '6666',
-            d2: 1111
-        }
-    });
-    console.log(res);
-})()
+app.renderTo(document.getElementById('app-root')!);

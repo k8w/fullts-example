@@ -5,7 +5,8 @@ import * as path from 'path';
 let server = new TsrpcServer({
     protocolPath: path.resolve(__dirname, 'shared/protocols'),
     apiPath: path.resolve(__dirname, 'src/api'),
-    autoImplement: true
+    autoImplement: true,
+    defaultPort: 3001
 });
 
 //跨域

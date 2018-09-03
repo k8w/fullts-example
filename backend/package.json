@@ -10,12 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "k8w-extend-native": "^0.1.6",
-    "tsrpc": "^1.0.1"
+    "tsrpc": "^1.3.0"
   },
   "devDependencies": {
     "onchange": "^4.1.0",
     "ts-node": "^6.0.1",
-    "typescript": "^2.8.3"
+    "typescript": "*"
   }
 }

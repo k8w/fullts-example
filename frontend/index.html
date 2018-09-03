@@ -1,1 +1,34 @@
-<script src="main.js"></script>
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>k8w的技术博客</title>
+    <meta name="keywords" content="k8w,TypeScript,全栈工程师,全栈开发,Web前端,H5,HTML5,JavaScript,游戏开发,WebGL,NodeJS" />
+    <meta name="description" content="" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_495231_c588ni42zkgfogvi.css" />
+
+    <!-- es5-shim -->
+    <!--[if lte IE 8]>
+        <script src="https://cdn.bootcss.com/es5-shim/4.5.9/es5-shim.min.js"></script>
+        <script src="https://cdn.bootcss.com/es5-shim/4.5.9/es5-sham.min.js"></script>
+    <![endif]-->
+
+    <!-- es6-shim -->
+    <script>
+        if (typeof Promise == 'undefined' || String.prototype.startsWith == undefined || Array.prototype.find == undefined) {
+            document.writeln('<script src="https://cdn.bootcss.com/es6-shim/0.35.3/es6-shim.min.js"><\/script>');
+            document.writeln('<script src="https://cdn.bootcss.com/es6-shim/0.35.3/es6-sham.min.js"><\/script>');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app-root"></div>
+    <script src="/dist/bundle.js"></script>
+</body>
+
+</html>
