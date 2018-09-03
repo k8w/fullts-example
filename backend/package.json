@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "onchange **/*.ts ./shared/**/*.ts -i -v -- node -r ts-node/register --preserve-symlinks index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "k8w-extend-native": "^0.1.6",
+    "tsrpc": "^1.0.1"
+  },
+  "devDependencies": {
+    "ts-node": "^6.0.1",
+    "typescript": "^2.8.3"
+  }
+}
