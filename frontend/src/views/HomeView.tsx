@@ -4,15 +4,23 @@ import { Link } from 'react-router-dom';
 import { FulltsView } from 'fullts';
 import PtlDemo from '../../shared/protocols/PtlDemo';
 
+interface HomeViewProps {
+
+}
+
 interface HomeViewState {
     value?: string
 }
 
-export default class HomeView extends FulltsView<{}, HomeViewState>{
+export default class HomeView extends FulltsView<HomeViewProps, HomeViewState>{
 
-    componentWillMount() {
-        this.state = {};
-    }
+    state: HomeViewState = {};
+
+    // 与以下初始化state的方式，任选一种
+    // constructor(props: any, context?: any) {
+    //     super(props, context);
+    //     this.state = {}
+    // }
 
     private isShow = false;
     render() {

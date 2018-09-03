@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { FulltsComponent} from 'fullts';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+const activeStyle = {
+    background: '#000',
+    color: '#fff'
+}
 
 export default class Layout extends FulltsComponent {
     render() {
@@ -11,10 +16,10 @@ export default class Layout extends FulltsComponent {
                     padding: 20
                 }}>
                     <h1>Layout Header</h1>
-                    <Link to='/'>Home</Link>&nbsp;&nbsp;&nbsp;
-                    <Link to='/sub'>Sub</Link>&nbsp;&nbsp;&nbsp;
-                    <Link to='/sub/123'>Sub/123</Link>&nbsp;&nbsp;&nbsp;
-                    <Link to='/xxxxx'>xxxxx(404)</Link>&nbsp;&nbsp;&nbsp;
+                    <NavLink to='/' activeStyle={activeStyle} exact={true}>Home</NavLink>&nbsp;&nbsp;&nbsp;
+                    <NavLink to='/sub' activeStyle={activeStyle}>Sub</NavLink>&nbsp;&nbsp;&nbsp;
+                    <NavLink to='/sub/123' activeStyle={activeStyle}>Sub/123</NavLink>&nbsp;&nbsp;&nbsp;
+                    <NavLink to='/xxxxx' activeStyle={activeStyle}>xxxxx(404)</NavLink>&nbsp;&nbsp;&nbsp;
                 </header>
                 <section style={{padding: 20}}>
                     {this.props.children}
